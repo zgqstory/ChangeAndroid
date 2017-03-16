@@ -15,6 +15,10 @@ public class LoginPresenter{
         this.loginView = view;
     }
 
+    public void getCheck() {
+
+    }
+
     public void login() {
         loginView.showLoading();
 

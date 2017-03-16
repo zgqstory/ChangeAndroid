@@ -3,6 +3,8 @@ package com.story.change.android.mvp.ui.user;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.*;
 import butterknife.Bind;
@@ -11,6 +13,7 @@ import butterknife.OnClick;
 import com.story.change.android.mvp.MainActivity;
 import com.story.change.android.mvp.R;
 import com.story.change.android.mvp.data.User;
+import com.story.change.android.mvp.presenter.user.LoginPresenter;
 import com.story.change.android.mvp.ui.base.BaseActivity;
 import com.story.view.alert_view_ios.AlertView;
 import com.story.view.alert_view_ios.Style;
@@ -40,15 +43,43 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @Bind(R.id.tv_switch_pwd)
     TextView switchPwdTv;
 
+    private int type = 0;//登录方式：0，密码登录；1，验证码登录
+    private LoginPresenter loginPresenter;//登录Presenter
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        loginPresenter = new LoginPresenter(this, null);
+        initViews();
     }
 
+    private void initViews() {
+        phoneEt.addTextChangedListener(inputWatcher);
+        pwdEt.addTextChangedListener(inputWatcher);
+        checkEt.addTextChangedListener(inputWatcher);
+    }
+
+    private TextWatcher inputWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            setLoginBtnStatus();
+        }
+    };
+
     @OnClick(R.id.btn_check_get)
-    public void getCheck(View view) {}
+    public void getCheck(View view) {
+        loginPresenter.getCheck();
+    }
 
     @OnClick(R.id.btn_login)
     public void login(View view) {}
@@ -70,23 +101,25 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void toSignActivity() {
-//        startActivity(new Intent(this, SignActivity.class));
-        onError("测试");
+        startActivity(new Intent(this, SignActivity.class));
     }
 
     @Override
     public void changeLoginStyle(boolean isPwd) {
         if (isPwd) {
+            type = 0;
             pwdLayout.setVisibility(View.VISIBLE);
             checkLayout.setVisibility(View.GONE);
             switchCheckTv.setVisibility(View.VISIBLE);
             switchPwdTv.setVisibility(View.GONE);
         } else {
+            type = 1;
             pwdLayout.setVisibility(View.GONE);
             checkLayout.setVisibility(View.VISIBLE);
             switchCheckTv.setVisibility(View.GONE);
             switchPwdTv.setVisibility(View.VISIBLE);
         }
+        setLoginBtnStatus();
     }
 
     @Override
@@ -116,7 +149,15 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void setLoginBtnStatus() {
-
+        String phone = getUserName();
+        String pwd = getPassWord();
+        String check = getCheck();
+        if ((type == 0 && phone != null && !phone.equals("") && pwd != null && !pwd.equals("")) ||
+                (type == 1 && phone != null && !phone.equals("") && check != null && !check.equals(""))) {
+            loginBtn.setEnabled(true);
+        } else {
+            loginBtn.setEnabled(false);
+        }
     }
 
     @Override
