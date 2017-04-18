@@ -5,9 +5,21 @@ package com.story.change.android.mvp.ui.base;
  * 基本视图接口
  */
 public interface BaseView {
+
+    /**
+     * 展示进度框
+     */
     void showLoading();
 
+    /**
+     * 隐藏进度框
+     */
     void hideLoading();
 
-    void onError(String message);
+    /**
+     * 弹出通用提示框
+     * @param message 显示内容
+     */
+    void alertMessage(String message);
+
 }

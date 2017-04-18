@@ -28,7 +28,7 @@ public class SignActivity extends BaseActivity implements SignView {
     }
 
     @Override
-    public void onError(String message) {
+    public void alertMessage(String message) {
 
     }
 }

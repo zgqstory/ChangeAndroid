@@ -25,4 +25,9 @@ dependencies {
     compile project(path: ':view')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile group: 'com.jakewharton', name: 'butterknife', version: '7.0.1'
+    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.1.0'
+    compile group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.1.0'
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.0.7'
+    compile group: 'io.reactivex.rxjava2', name: 'rxandroid', version: '2.0.1'
+    compile group: 'com.jakewharton.retrofit', name: 'retrofit2-rxjava2-adapter', version: '1.0.0'
 }

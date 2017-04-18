@@ -18,7 +18,7 @@ public class ResetPwdActivity extends BaseActivity implements ResetPwdView {
     }
 
     @Override
-    public void onError(String message) {
+    public void alertMessage(String message) {
 
     }
 }

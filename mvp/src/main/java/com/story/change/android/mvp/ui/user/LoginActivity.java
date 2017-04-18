@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.story.change.android.mvp.MainActivity;
 import com.story.change.android.mvp.R;
-import com.story.change.android.mvp.data.User;
+import com.story.change.android.mvp.bean.user.User;
 import com.story.change.android.mvp.presenter.user.LoginPresenter;
 import com.story.change.android.mvp.ui.base.BaseActivity;
 import com.story.view.alert_view_ios.AlertView;
@@ -51,7 +51,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        loginPresenter = new LoginPresenter(this, null);
+        loginPresenter = new LoginPresenter(this, this);
         initViews();
     }
 
@@ -82,7 +82,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @OnClick(R.id.btn_login)
-    public void login(View view) {}
+    public void login(View view) {
+        if (type == 0) {
+            loginPresenter.loginByPwd();
+        } else {
+            loginPresenter.loginByPhone();
+        }
+    }
 
     @OnClick(R.id.tv_to_register)
     public void register(View view) {
@@ -123,11 +129,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void toResetPwdActivity() {
-        startActivity(new Intent(this, ResetPwdActivity.class));
-    }
-
-    @Override
     public String getUserName() {
         return phoneEt.getText().toString().trim();
     }
@@ -143,8 +144,14 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void setCheckBtnStatus() {
-
+    public void setCheckBtnStatus(int second) {
+        if (second > 0) {
+            getCheckBtn.setEnabled(false);
+            getCheckBtn.setText(String.format(LoginActivity.this.getString(R.string.login_check_get_after), second));
+        } else {
+            getCheckBtn.setEnabled(true);
+            getCheckBtn.setText(LoginActivity.this.getString(R.string.login_check_get_btn));
+        }
     }
 
     @Override
@@ -176,13 +183,14 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void onError(String message) {
-        new AlertView(message, null, getString(R.string.sure), null, null, this, Style.Alert, null).show();
+    public void alertMessage(String message) {
+        new AlertView(message, null, LoginActivity.this.getString(R.string.sure), null, null, LoginActivity.this, Style.Alert, null).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+        loginPresenter.releaseData();
     }
 }

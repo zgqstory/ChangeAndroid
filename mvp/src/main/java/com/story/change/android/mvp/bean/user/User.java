@@ -1,4 +1,4 @@
-package com.story.change.android.mvp.data;
+package com.story.change.android.mvp.bean.user;
 
 import android.os.Parcel;
 import android.os.Parcelable;
