@@ -2,11 +2,10 @@ package com.story.change.android.mvp.util;
 
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
 
 /**
  * Created by story on 2017/4/18 0018 下午 1:16.
- * 自定义CountDownTimer，解决延迟问题
+ * 自定义CountDownTimer，解决延迟问题(此倒计时要求onTick不能做延时操作)
  */
 public abstract class CountTimerBase {
     /**
@@ -18,9 +17,6 @@ public abstract class CountTimerBase {
      * The interval in millis that the user receives callbacks
      */
     private final long mCountdownInterval;
-
-    private long mStartTime;//start时当前时间的毫秒数
-    private long mStopTime;//结束时的时间毫秒数，为start + millis
 
     /**
      * boolean representing if the timer was cancelled
@@ -56,8 +52,6 @@ public abstract class CountTimerBase {
             onFinish();
             return this;
         }
-        mStartTime = SystemClock.elapsedRealtime();
-        mStopTime = mStartTime + mMillisInFuture;
         mHandler.sendMessage(mHandler.obtainMessage(MSG, mMillisInFuture));
         return this;
     }

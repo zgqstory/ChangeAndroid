@@ -17,18 +17,5 @@ public class SignActivity extends BaseActivity implements SignView {
         setContentView(R.layout.activity_sign);
     }
 
-    @Override
-    public void showLoading() {
 
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void alertMessage(String message) {
-
-    }
 }

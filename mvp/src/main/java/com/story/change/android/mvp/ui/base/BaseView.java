@@ -8,8 +8,10 @@ public interface BaseView {
 
     /**
      * 展示进度框
+     * @param message 提示文字
+     * @param time 倒计时时间，小于等于0表示不需要
      */
-    void showLoading();
+    void showLoading(String message, int time);
 
     /**
      * 隐藏进度框

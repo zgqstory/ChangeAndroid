@@ -173,21 +173,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void showLoading() {
-
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void alertMessage(String message) {
-        new AlertView(message, null, LoginActivity.this.getString(R.string.sure), null, null, LoginActivity.this, Style.Alert, null).show();
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);

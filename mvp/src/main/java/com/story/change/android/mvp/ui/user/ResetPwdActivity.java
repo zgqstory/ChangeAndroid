@@ -7,18 +7,5 @@ import com.story.change.android.mvp.ui.base.BaseActivity;
  * 重置密码页面
  */
 public class ResetPwdActivity extends BaseActivity implements ResetPwdView {
-    @Override
-    public void showLoading() {
 
-    }
-
-    @Override
-    public void hideLoading() {
-
-    }
-
-    @Override
-    public void alertMessage(String message) {
-
-    }
 }

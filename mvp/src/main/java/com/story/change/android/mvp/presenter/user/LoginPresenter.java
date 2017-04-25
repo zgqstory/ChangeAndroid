@@ -41,7 +41,7 @@ public class LoginPresenter extends BasePresenter {
         if (StringCheckUtil.isNullAndEmpty(userPhone)) {
             loginView.alertMessage(context.getString(R.string.login_error_phone_null));
         } else {
-            loginView.showLoading();
+            loginView.showLoading(null, 0);
             userBiz.userGetCheck(userPhone)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
@@ -90,7 +90,7 @@ public class LoginPresenter extends BasePresenter {
         } else if (StringCheckUtil.isNullAndEmpty(userCheck)) {
             loginView.alertMessage(context.getString(R.string.login_error_check_null));
         } else {
-            loginView.showLoading();
+            loginView.showLoading(null, 0);
             userBiz.userLoginByPhone(userPhone, userCheck)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
@@ -109,7 +109,7 @@ public class LoginPresenter extends BasePresenter {
         } else if (StringCheckUtil.isNullAndEmpty(userPwd)) {
             loginView.alertMessage(context.getString(R.string.login_error_pwd_null));
         } else {
-            loginView.showLoading();
+            loginView.showLoading(null, 0);
             userBiz.userLoginByPwd(userName, userPwd)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
