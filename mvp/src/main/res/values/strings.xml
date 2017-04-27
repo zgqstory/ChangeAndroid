@@ -6,7 +6,8 @@
 
     <!-- 登录注册及实名认证相关 -->
     <string name="login_user_tip">手机号/用户名</string>
-    <string name="login_pwd_tip">输入密码</string>
+    <string name="login_phone_tip">请输入手机号</string>
+    <string name="login_pwd_tip">请输入密码</string>
     <string name="login_check_tip">动态验证码</string>
     <string name="login_check_get_btn">点击获取验证码</string>
     <string name="login_check_get_after">%1$d秒后重新获取</string>
@@ -19,4 +20,6 @@
     <string name="login_error_name_null">用户名不能够为空</string>
     <string name="login_error_pwd_null">密码不能够为空</string>
     <string name="login_error_check_null">验证码不能够为空</string>
+    <string name="sign">注册</string>
+
 </resources>

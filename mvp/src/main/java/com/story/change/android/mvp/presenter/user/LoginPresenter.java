@@ -6,6 +6,7 @@ import com.story.change.android.mvp.bean.base.ResponseBase;
 import com.story.change.android.mvp.bean.user.User;
 import com.story.change.android.mvp.biz.RetrofitUtil;
 import com.story.change.android.mvp.biz.user.IUserBiz;
+import com.story.change.android.mvp.encrypt.MD5Util;
 import com.story.change.android.mvp.presenter.base.BasePresenter;
 import com.story.change.android.mvp.ui.user.LoginView;
 import com.story.change.android.mvp.util.CountDownTimerUtils;
@@ -110,7 +111,7 @@ public class LoginPresenter extends BasePresenter {
             loginView.alertMessage(context.getString(R.string.login_error_pwd_null));
         } else {
             loginView.showLoading(null, 0);
-            userBiz.userLoginByPwd(userName, userPwd)
+            userBiz.userLoginByPwd(userName, MD5Util.getMD5(userPwd))
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(loginObserver);

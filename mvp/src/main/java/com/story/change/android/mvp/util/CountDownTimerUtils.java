@@ -16,7 +16,6 @@ public class CountDownTimerUtils extends CountTimerBase {
     @Override
     public void onTick(long millisUntilFinished) {
         if (listener != null) {
-            System.out.println("millisUntilFinished : " + millisUntilFinished);
             if (millisUntilFinished > 0) {
                 listener.onTick((int) (millisUntilFinished/1000));
             }
@@ -26,7 +25,6 @@ public class CountDownTimerUtils extends CountTimerBase {
     @Override
     public void onFinish() {
         if (listener != null) {
-            System.out.println("finish");
             listener.onFinish();
         }
     }
