@@ -22,4 +22,24 @@
     <string name="login_error_check_null">验证码不能够为空</string>
     <string name="sign">注册</string>
 
+    <!-- 主页面 -->
+    <string name="main_tab_user">用户</string>
+    
+    <!-- 个人中心 -->
+    <string name="user_settings_avatar">头\u3000像\u3000</string>
+    <string name="user_settings_phone">手机号\u3000</string>
+    <string name="user_settings_name">用户名\u3000</string>
+    <string name="user_settings_password">密\u3000码\u3000</string>
+    <string name="user_settings_name_title">设置用户名</string>
+    <string name="user_settings_name_label">用户名\u3000</string>
+    <string name="user_settings_name_hint">请输入用户名</string>
+    <string name="user_settings_name_null">用户名不能够为空</string>
+    <string name="user_settings_password_title">设置密码</string>
+    <string name="user_settings_password_now_label">原密码\u3000</string>
+    <string name="user_settings_password_now_hint">请输入原密码</string>
+    <string name="user_settings_password_new_label">新密码\u3000</string>
+    <string name="user_settings_password_new_hint">请输入新密码</string>
+    <string name="user_settings_error_pwd_now_null">原密码不能够为空</string>
+    <string name="user_settings_error_pwd_new_null">新密码不能够为空</string>
+
 </resources>

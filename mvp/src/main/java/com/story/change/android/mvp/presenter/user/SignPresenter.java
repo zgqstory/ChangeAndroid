@@ -104,8 +104,7 @@ public class SignPresenter extends BasePresenter {
                         public void onNext(ResponseBase<User> userResponseBase) {
                             signView.hideLoading();
                             if ("N".equals(userResponseBase.getRspType())) {
-                                // TODO 保存user数据
-                                signView.toMainActivity(null);
+                                signView.toMainActivity(userResponseBase.getRspData());
                             } else {
                                 signView.alertMessage(userResponseBase.getRspMsg());
                             }

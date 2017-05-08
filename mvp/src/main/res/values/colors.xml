@@ -6,4 +6,12 @@
     
     <color name="theme_blue">#0DAFF7</color>
     <color name="gray">#b5b5b6</color>
+    <color name="main_tab_default">#566372</color>
+    <color name="main_tab_selected">#0DAFF7</color>
+    <color name="main_tab_line">#333333</color>
+
+    <!-- Common -->
+    <color name="common_txt_label">#4f4f4f</color>
+    <color name="common_txt_value">#222222</color>
+    <color name="common_line">#566372</color>
 </resources>

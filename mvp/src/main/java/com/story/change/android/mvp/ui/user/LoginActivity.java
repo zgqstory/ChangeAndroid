@@ -10,13 +10,13 @@ import android.widget.*;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.story.change.android.mvp.MainActivity;
+import com.story.change.android.mvp.AppApplication;
+import com.story.change.android.mvp.ui.main.MainActivity;
 import com.story.change.android.mvp.R;
 import com.story.change.android.mvp.bean.user.User;
 import com.story.change.android.mvp.presenter.user.LoginPresenter;
 import com.story.change.android.mvp.ui.base.BaseActivity;
-import com.story.view.alert_view_ios.AlertView;
-import com.story.view.alert_view_ios.Style;
+import com.story.view.input.ClearEditText;
 
 /**
  * Created by story on 2017/3/10 0010 下午 2:58.
@@ -25,11 +25,11 @@ import com.story.view.alert_view_ios.Style;
 public class LoginActivity extends BaseActivity implements LoginView {
 
     @Bind(R.id.et_user)
-    EditText phoneEt;
+    ClearEditText phoneEt;
     @Bind(R.id.et_pwd)
-    EditText pwdEt;
+    ClearEditText pwdEt;
     @Bind(R.id.et_check)
-    EditText checkEt;
+    ClearEditText checkEt;
     @Bind(R.id.lay_check)
     LinearLayout checkLayout;
     @Bind(R.id.lay_pwd)
@@ -169,6 +169,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
     @Override
     public void toMainActivity(User user) {
+        AppApplication.getInstance().setUserInfo(user);
         startActivity(new Intent(this, MainActivity.class));
     }
 

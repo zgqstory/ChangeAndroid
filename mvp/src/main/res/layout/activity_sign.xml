@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:clear="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -21,7 +22,7 @@
             android:layout_marginTop="80dp"
             android:background="@drawable/ellipse_hollow_blue">
 
-        <EditText
+        <com.story.view.input.ClearEditText
                 android:id="@+id/et_phone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -34,7 +35,8 @@
                 android:hint="@string/login_phone_tip"
                 android:textColorHint="@color/gray"
                 android:paddingStart="5dp"
-                android:paddingEnd="5dp"/>
+                android:paddingEnd="5dp"
+                clear:clear_et_show_type="clear"/>
 
         <ImageView
                 android:layout_width="25dp"
@@ -59,7 +61,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/ellipse_hollow_blue">
 
-            <EditText
+            <com.story.view.input.ClearEditText
                     android:id="@+id/et_check"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -72,7 +74,8 @@
                     android:hint="@string/login_check_tip"
                     android:textColorHint="@color/gray"
                     android:paddingStart="5dp"
-                    android:paddingEnd="5dp"/>
+                    android:paddingEnd="5dp"
+                    clear:clear_et_show_type="clear"/>
 
             <ImageView
                     android:layout_width="25dp"

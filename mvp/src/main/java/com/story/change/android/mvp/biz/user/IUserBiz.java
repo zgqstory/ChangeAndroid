@@ -28,4 +28,8 @@ public interface IUserBiz {
     @FormUrlEncoded
     @POST("ChangeWeb/user/register")
     Observable<ResponseBase<User>> userRegister(@Field("userPhone") String userPhone, @Field("userCheck") String userCheck);
+
+    @FormUrlEncoded
+    @POST("ChangeWeb/user/updateUserData")
+    Observable<ResponseBase<User>> updateUserData(@Field("type") int type, @Field("phone") String phone, @Field("data") String data, @Field("pwd") String pwd);
 }

@@ -20,7 +20,6 @@ public class MD5Util {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(str.getBytes());
-            md.digest();
             return StringFormatUtil.BcdToHexStr(md.digest());
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();

@@ -11,7 +11,8 @@ import android.widget.EditText;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import com.story.change.android.mvp.MainActivity;
+import com.story.change.android.mvp.AppApplication;
+import com.story.change.android.mvp.ui.main.MainActivity;
 import com.story.change.android.mvp.R;
 import com.story.change.android.mvp.bean.user.User;
 import com.story.change.android.mvp.presenter.user.SignPresenter;
@@ -107,6 +108,7 @@ public class SignActivity extends BaseActivity implements SignView {
 
     @Override
     public void toMainActivity(User user) {
+        AppApplication.getInstance().setUserInfo(user);
         startActivity(new Intent(this, MainActivity.class));
     }
 
@@ -119,5 +121,11 @@ public class SignActivity extends BaseActivity implements SignView {
     public void finish() {
         super.finish();
         signPresenter.releaseData();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 }

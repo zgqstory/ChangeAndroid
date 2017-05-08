@@ -129,8 +129,7 @@ public class LoginPresenter extends BasePresenter {
         public void onNext(ResponseBase<User> userResponseBase) {
             loginView.hideLoading();
             if ("N".equals(userResponseBase.getRspType())) {
-                // TODO 保存user数据
-                loginView.toMainActivity(null);
+                loginView.toMainActivity(userResponseBase.getRspData());
             } else {
                 loginView.alertMessage(userResponseBase.getRspMsg());
             }

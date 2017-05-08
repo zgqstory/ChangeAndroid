@@ -16,7 +16,7 @@ public class RetrofitUtil {
     public static Retrofit getRetrofit() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.1.107:8080/")
+                    .baseUrl("http://192.168.1.102:8080/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(new OkHttpClient())

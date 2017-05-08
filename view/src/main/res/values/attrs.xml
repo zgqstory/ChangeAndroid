@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- input/ClearEditText -->
+    <declare-styleable name="ClearEditText">
+        <attr name="clear_et_show_type" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="clear" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
