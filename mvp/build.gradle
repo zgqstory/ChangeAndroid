@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.story.change.android.mvp"
-        minSdkVersion 19
+        minSdkVersion 16
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
@@ -31,4 +31,5 @@ dependencies {
     compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.0.7'
     compile group: 'io.reactivex.rxjava2', name: 'rxandroid', version: '2.0.1'
     compile group: 'com.jakewharton.retrofit', name: 'retrofit2-rxjava2-adapter', version: '1.0.0'
+    compile group: 'com.squareup.picasso', name: 'picasso', version: '2.5.2'
 }

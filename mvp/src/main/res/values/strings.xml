@@ -3,6 +3,7 @@
 
     <!-- 通用字符串 -->
     <string name="sure">确定</string>
+    <string name="cancel">取消</string>
 
     <!-- 登录注册及实名认证相关 -->
     <string name="login_user_tip">手机号/用户名</string>
@@ -26,6 +27,7 @@
     <string name="main_tab_user">用户</string>
     
     <!-- 个人中心 -->
+    <string name="user_settings_title">个人中心</string>
     <string name="user_settings_avatar">头\u3000像\u3000</string>
     <string name="user_settings_phone">手机号\u3000</string>
     <string name="user_settings_name">用户名\u3000</string>
@@ -41,5 +43,12 @@
     <string name="user_settings_password_new_hint">请输入新密码</string>
     <string name="user_settings_error_pwd_now_null">原密码不能够为空</string>
     <string name="user_settings_error_pwd_new_null">新密码不能够为空</string>
+    <string name="user_settings_success">设置成功</string>
+    
+    <!-- 图片相关 -->
+    <string name="picture_from_take">拍照获取</string>
+    <string name="picture_from_album">从相册选择</string>
+    <string name="picture_album_title">选择图片</string>
+    <string name="image_crop_title">图片裁剪</string>
 
 </resources>

@@ -36,7 +36,8 @@
                 android:textColorHint="@color/gray"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
-                clear:clear_et_show_type="clear"/>
+                clear:clear_et_show_type="clear"
+                android:text="13681903251"/>
 
         <ImageView
                 android:layout_width="25dp"
@@ -122,7 +123,8 @@
                 android:textColorHint="@color/gray"
                 android:paddingStart="5dp"
                 android:paddingEnd="5dp"
-                clear:clear_et_show_type="clear" />
+                clear:clear_et_show_type="clear"
+                android:text="112233"/>
 
         <ImageView
                 android:layout_width="25dp"

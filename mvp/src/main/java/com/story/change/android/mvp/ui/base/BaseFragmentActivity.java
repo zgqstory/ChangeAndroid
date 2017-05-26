@@ -3,6 +3,7 @@ package com.story.change.android.mvp.ui.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Toast;
 import com.story.change.android.mvp.R;
 import com.story.view.alert_view_ios.AlertView;
 import com.story.view.alert_view_ios.Style;
@@ -41,5 +42,10 @@ public class BaseFragmentActivity extends FragmentActivity implements BaseView {
     @Override
     public void alertMessage(String message) {
         new AlertView(message, null, BaseFragmentActivity.this.getString(R.string.sure), null, null, BaseFragmentActivity.this, Style.Alert, null).show();
+    }
+
+    @Override
+    public void toastMessage(String message) {
+        Toast.makeText(BaseFragmentActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }

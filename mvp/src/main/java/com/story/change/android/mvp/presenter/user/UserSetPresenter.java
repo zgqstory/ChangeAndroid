@@ -72,6 +72,7 @@ public class UserSetPresenter extends BasePresenter {
                             } else {
                                 AppApplication.getInstance().setUserInfo(userResponseBase.getRspData());
                                 userSetView.back();
+                                userSetView.toastMessage(context.getString(R.string.user_settings_success));
                             }
                         }
 

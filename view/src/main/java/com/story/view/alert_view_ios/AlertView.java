@@ -72,6 +72,8 @@ public class AlertView {
         initViews();
         init();
         initEvents();
+        //默认可取消
+        setCancelable(true);
     }
 
     /**
@@ -350,7 +352,7 @@ public class AlertView {
      * 设置是否可取消
      */
     public AlertView setCancelable(boolean isCancelable) {
-        View view = rootView.findViewById(rootId);
+        View view = rootView;
         if (isCancelable) {
             view.setOnTouchListener(onCancelableTouchListener);
         } else{

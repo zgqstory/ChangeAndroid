@@ -3,6 +3,7 @@ package com.story.change.android.mvp.ui.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 import com.story.change.android.mvp.R;
 import com.story.view.alert_view_ios.AlertView;
 import com.story.view.alert_view_ios.Style;
@@ -41,5 +42,10 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
     @Override
     public void alertMessage(String message) {
         new AlertView(message, null, BaseActivity.this.getString(R.string.sure), null, null, BaseActivity.this, Style.Alert, null).show();
+    }
+
+    @Override
+    public void toastMessage(String message) {
+        Toast.makeText(BaseActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }

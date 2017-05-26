@@ -24,4 +24,10 @@ public interface BaseView {
      */
     void alertMessage(String message);
 
+    /**
+     * Toast方式输入提示
+     * @param message 显示内容
+     */
+    void toastMessage(String message);
+
 }

@@ -54,4 +54,13 @@ public class BaseFragment extends Fragment implements BaseView {
             mainActivity.alertMessage(message);
         }
     }
+
+    @Override
+    public void toastMessage(String message) {
+        if (baseActivity != null) {
+            baseActivity.toastMessage(message);
+        } else if (mainActivity != null) {
+            mainActivity.toastMessage(message);
+        }
+    }
 }
